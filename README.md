@@ -6,6 +6,8 @@ A modern AI-powered medical voice assistant built with Next.js, TypeScript, and 
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/YOUR_USERNAME/medi-voice-ai)
 
+**Live Demo**: [https://medi-voice-ai.vercel.app](https://medi-voice-ai.vercel.app)
+
 ## ✨ Features
 
 - 🎤 **Voice Recognition**: Real-time speech-to-text using Web Speech API
@@ -66,12 +68,17 @@ npm run dev
 1. **Fork this repository**
 2. **Connect to Vercel:**
    - Go to [vercel.com](https://vercel.com)
+   - Click "New Project"
    - Import your GitHub repository
-   - Add environment variables in Vercel dashboard
-   - Deploy!
+   - Vercel will auto-detect Next.js settings
+   - Click "Deploy"
 
-3. **Environment Variables in Vercel:**
-   - `OPENAI_API_KEY`: Your OpenAI API key (optional)
+3. **Environment Variables in Vercel (Optional):**
+   - Go to Project Settings → Environment Variables
+   - Add: `OPENAI_API_KEY` = Your OpenAI API key
+   - Redeploy to apply changes
+
+4. **Your app will be live at**: `https://your-project-name.vercel.app`
 
 ### Deploy to GitHub Pages
 
