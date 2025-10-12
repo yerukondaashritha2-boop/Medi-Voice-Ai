@@ -22,13 +22,21 @@ export default function Home() {
     setIsProcessing(true)
     
     try {
-      const response = await fetch('/api/medical-ai', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ message: transcript, conversation: conversation })
-      })
+      // Try server-side API first, fallback to client-side
+      let data
+      try {
+        const response = await fetch('/api/medical-ai', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ message: transcript, conversation: conversation })
+        })
+        data = await response.json()
+      } catch (apiError) {
+        // Fallback to client-side processing for static export
+        const { processMedicalQuery } = await import('./lib/medicalAI')
+        data = await processMedicalQuery(transcript)
+      }
       
-      const data = await response.json()
       const assistantMessage = { role: 'assistant' as const, content: data.response, timestamp: new Date() }
       setConversation(prev => [...prev, assistantMessage])
       
