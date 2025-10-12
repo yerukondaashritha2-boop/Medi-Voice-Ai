@@ -111,6 +111,57 @@ const getMedicalResponse = (message: string): string => {
 **Important:** This is general information only. Consult healthcare professionals for proper management.`
   }
   
+  if (lowerMessage.includes('leg pain') || lowerMessage.includes('leg ache') || lowerMessage.includes('legs hurt')) {
+    return `Leg pain can have various causes and should be evaluated based on severity and duration.
+
+**Common causes:**
+- Muscle strain or overuse
+- Poor circulation
+- Nerve compression
+- Arthritis or joint issues
+- Blood clots (deep vein thrombosis)
+
+**When to seek immediate medical attention:**
+- Sudden, severe leg pain
+- Pain with swelling, redness, or warmth
+- Pain that worsens with walking
+- Leg pain with chest pain or shortness of breath
+
+**General care:**
+- Rest and elevate the leg
+- Apply ice for acute pain
+- Gentle stretching and movement
+- Over-the-counter pain relief (if appropriate)
+
+**Important:** This is general information only. Persistent or severe leg pain requires professional medical evaluation.`
+  }
+  
+  if (lowerMessage.includes('back pain') || lowerMessage.includes('backache')) {
+    return `Back pain is very common and usually improves with time and proper care.
+
+**Common causes:**
+- Muscle or ligament strain
+- Poor posture
+- Herniated discs
+- Arthritis
+- Stress and tension
+
+**Self-care measures:**
+- Maintain good posture
+- Gentle stretching and strengthening exercises
+- Apply heat or ice
+- Over-the-counter pain relief
+- Stay active within comfort limits
+
+**Seek medical attention if:**
+- Pain persists for more than a few weeks
+- Pain radiates down the leg
+- Numbness or weakness in legs
+- Loss of bowel or bladder control
+
+**Important:** This is general information only. Consult healthcare professionals for proper diagnosis and treatment.`
+  }
+  
   // Default response for other queries
   return `Thank you for your medical question. I'm here to provide general health information.
 
