@@ -22,7 +22,7 @@ export default function VoiceRecorder({
 }: VoiceRecorderProps) {
   const [isSupported, setIsSupported] = useState(false)
   const [transcript, setTranscript] = useState('')
-  const recognitionRef = useRef<SpeechRecognition | null>(null)
+  const recognitionRef = useRef<any>(null)
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
